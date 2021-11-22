@@ -8,14 +8,14 @@ A simple CLI for ODRIX (ODIN@matrix)
 ```sh-session
 $ git clone git@github.com:syncpoint/odrix-cli.git
 $ npm install 
-$ odrix-cli help
+$ bin/run help
 A simple CLI interface for ODRIX (ODIN@Matrix)
 
 VERSION
   odrix-cli/0.0.0 darwin-x64 node-v14.18.1
 
 USAGE
-  $ odrix-cli [COMMAND]
+  $ bin/run [COMMAND]
 
 COMMANDS
   help             display help for odrix-cli
