@@ -3,7 +3,7 @@ const Odrix = require('syncpoint-matrix')
 
 require('dotenv').config()
 
-class InvitedProjectsCommand extends Command {
+class InvitationsCommand extends Command {
   
   async run () {
     const odrix = new Odrix({
@@ -25,7 +25,7 @@ class InvitedProjectsCommand extends Command {
   }
 }
 
-InvitedProjectsCommand.description = `
+InvitationsCommand.description = `
 List all project we have been invited to join
 `
-module.exports = InvitedProjectsCommand
+module.exports = InvitationsCommand
