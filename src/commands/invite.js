@@ -16,7 +16,7 @@ class InviteCommand extends Command {
     const { args } = this.parse(InviteCommand)
 
     const projectId = args.projectId
-      ? projectId
+      ? args.projectId
       : await cli.prompt('ID (uuid) of the project to be shared')
 
     const userId = args.userId 
