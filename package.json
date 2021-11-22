@@ -1,0 +1,61 @@
+{
+  "name": "odrix-cli",
+  "description": "A simple CLI interface for ODRIX (ODIN@Matrix)",
+  "version": "0.0.0",
+  "author": "Thomas Halwax @ThomasHalwax",
+  "bin": {
+    "odrix-cli": "./bin/run"
+  },
+  "bugs": "https://github.com/ThomasHalwax/odrix-cli/issues",
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.26.0",
+    "@oclif/test": "^1.2.5",
+    "chai": "^4.3.3",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0",
+    "globby": "^10.0.2",
+    "mocha": "^5.2.0",
+    "nyc": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/ThomasHalwax/odrix-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "odrix-cli",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "ThomasHalwax/odrix-cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "dependencies": {
+    "@oclif/command": "^1.8.3",
+    "@oclif/config": "^1.17.1",
+    "@oclif/plugin-help": "^3.2.5",
+    "cli-ux": "^5.6.3",
+    "dot-env": "^0.0.1",
+    "matrix-js-sdk": "^15.1.0",
+    "syncpoint-matrix": "github:syncpoint/matrix",
+    "uuid": "^8.3.2",
+    "wtfnode": "^0.9.1"
+  }
+}
