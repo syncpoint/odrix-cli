@@ -163,7 +163,11 @@ press any key to terminate ...
 
 ### Benutzer @thomas:thomass-macbook-pro.local
 
-_@thomas_ sendet eine Nachricht, die als JSON formatiert sein muss. __Achtung__: Meldungen können nicht an die Projekt-ID gesendet werden sundern nur an eine __Layer-ID__.
+_@thomas_ sendet eine Nachricht, die als JSON-String formatiert sein muss. __Achtung__: [matrix] erlaubt keine Properties vom Typ _Float_. Daher müssen diese Daten entweder als String codiert werden, oder die gesamte Payload noch Base64 codiert werden. Wie wär's mit einer Data URL:
+
+data:application/json;base64,<DATA>
+
+Meldungen können nicht an die Projekt-ID gesendet werden sondern nur an eine __Layer-ID__.
 
 ````shell
 bin/run post 618ab9bc-ae58-47e5-82c6-c02a406d7b19 '{ "id": "@thomas", "lat": "47.725717", "lon": "13.075570"}'

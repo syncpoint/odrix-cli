@@ -19,7 +19,7 @@ class ListenCommand extends Command {
     odrix.on('data', data => {
       console.dir(data, { depth: 4 })
     })
-    this.log('press any key to terminate ...')
+    this.log('press CTRL-C to terminate ...')
 
     readline.emitKeypressEvents(process.stdin)
     if (process.stdin.isTTY) {
@@ -32,7 +32,10 @@ class ListenCommand extends Command {
     })
     
     await (new Promise(resolve => {
-      process.stdin.once('keypress', () => {
+      process.stdin.setEncoding('utf-8')
+      process.stdin.resume()
+      process.stdin.on('data', key => {
+        if ( key !== '\u0003' ) return
         rl.close()
         return resolve()
       })
