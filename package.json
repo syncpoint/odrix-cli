@@ -53,7 +53,7 @@
     "@oclif/plugin-help": "^3.2.5",
     "cli-ux": "^5.6.3",
     "dot-env": "^0.0.1",
-    "matrix-js-sdk": "^15.1.0",
+    "matrix-js-sdk": "^15.3.0",
     "syncpoint-matrix": "github:syncpoint/matrix",
     "uuid": "^8.3.2",
     "wtfnode": "^0.9.1"
