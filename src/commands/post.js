@@ -26,7 +26,7 @@ class PostCommand extends Command {
     try {
       message = JSON.parse(message)
     } catch (error) {
-      this.error('No valid JSON!', { exit: true })
+      this.error(error, { exit: true })
     }
 
     const odrix = new Odrix({
