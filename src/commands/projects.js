@@ -13,7 +13,6 @@ class ProjectsCommand extends Command {
     })
     
     await odrix.start()
-    await odrix.toBeReady()
     const projects = await odrix.projects()
     if (projects.length === 0) {
       console.log('You have neither joined nor shared any projects.')

@@ -14,11 +14,12 @@ class ListenCommand extends Command {
     })
     
     await odrix.start()
-    await odrix.toBeReady()
 
-    odrix.on('data', data => {
+    /* odrix.on('data', data => {
       console.dir(data, { depth: 4 })
-    })
+    }) */
+    odrix.on('membership/invite', struct => console.log('#membership/invite ', struct))
+    odrix.on('hierarchy/new', struct => console.log('#hierarchy/new', struct))
     this.log('press CTRL-C to terminate ...')
 
     readline.emitKeypressEvents(process.stdin)

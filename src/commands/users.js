@@ -13,7 +13,6 @@ class UsersCommand extends Command {
     })
     
     await odrix.start()
-    await odrix.toBeReady()
     const users = await odrix.users()
     if (users.length === 0) {
       console.log('Poor one! You do not know anyone!')

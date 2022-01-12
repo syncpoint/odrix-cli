@@ -36,7 +36,6 @@ class PostCommand extends Command {
     })
     
     await odrix.start()
-    await odrix.toBeReady()
 
     await odrix.post(layerId, message)
     this.log('done')

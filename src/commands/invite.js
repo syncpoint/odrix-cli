@@ -30,7 +30,6 @@ class InviteCommand extends Command {
     })
     
     await odrix.start()
-    await odrix.toBeReady()
 
     await odrix.invite({ id: projectId }, userId)
     this.log('done')

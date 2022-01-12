@@ -13,7 +13,6 @@ class InvitationsCommand extends Command {
     })
     
     await odrix.start()
-    await odrix.toBeReady()
     const projects = await odrix.invitedProjects()
     if (projects.length === 0) {
       console.log('Sorry, but you are not invited to join any projects.')

@@ -9,9 +9,9 @@ class LoginCommand extends Command {
     const baseUrl = (await cli.prompt('[matrix] homeserver baseurl')).toLowerCase()
     const userId = (await cli.prompt('[matrix] user id')).toLowerCase()
     const password = await cli.prompt('Password', { type: 'hide' })
-
-    const odrix = new Odrix({ baseUrl })
-    const { access_token: accessToken } = await odrix.login(userId, password)
+    
+    this.log(`Trying to authenticate ${userId} via ${baseUrl}`)
+    const { access_token: accessToken } = await Odrix.login(baseUrl, userId, password)
 
     this.log(`You have been authenticated.`)
     this.log(`Your access token is ${accessToken}`)

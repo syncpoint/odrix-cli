@@ -37,7 +37,6 @@ class ShareCommand extends Command {
     })
     
     await odrix.start()
-    await odrix.toBeReady()
 
     await odrix.shareProject(projectStructure)
     this.log('done')

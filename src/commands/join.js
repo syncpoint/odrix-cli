@@ -25,7 +25,6 @@ class JoinCommand extends Command {
     })
     
     await odrix.start()
-    await odrix.toBeReady()
 
     await odrix.join(projectId)
     this.log('done')
