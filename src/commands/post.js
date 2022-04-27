@@ -1,5 +1,5 @@
 const { Command } = require('@oclif/command')
-const { cli } = require('cli-ux')
+const { CliUx } = require('@oclif/core')
 const Odrix = require('syncpoint-matrix')
 
 require('dotenv').config()
@@ -17,11 +17,11 @@ class PostCommand extends Command {
 
     const layerId = args.layerId 
       ? args.layerId
-      : await cli.prompt('ID (uuid) of the LAYER (not the project) you want to post')
+      : await CliUx.ux.prompt('ID (uuid) of the LAYER (not the project) you want to post')
 
     let message = args.message 
       ? args.message
-      : await cli.prompt('message')
+      : await CliUx.ux.prompt('message')
 
     try {
       message = JSON.parse(message)

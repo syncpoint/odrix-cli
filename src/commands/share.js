@@ -1,6 +1,6 @@
 const {Command, flags} = require('@oclif/command')
-const { cli } = require('cli-ux')
-const { v4: uuidv4 } = require('uuid')
+const { CliUx } = require('@oclif/core')
+const crypto = require('crypto')
 const Odrix = require('syncpoint-matrix')
 
 require('dotenv').config()
@@ -17,7 +17,7 @@ class ShareCommand extends Command {
 
     const projectName = args.projectName
       ? args.projectName
-      : await cli.prompt('Name of the project to be shared')
+      : await CliUx.ux.prompt('Name of the project to be shared')
 
     this.log('OK, I will create two layers for this project 🎲')
 
@@ -25,8 +25,8 @@ class ShareCommand extends Command {
       id: uuidv4(),
       name: projectName,
       layers: [
-        { id: uuidv4(), name: "Own Situation" },
-        { id: uuidv4(), name: "FFT" },
+        { id: crypto.randomUUID(), name: "Own Situation" },
+        { id: crypto.randomUUID(), name: "FFT" },
       ]
     }
 

@@ -1,5 +1,5 @@
 const { Command } = require('@oclif/command')
-const { cli } = require('cli-ux')
+const { CliUx } = require('@oclif/core')
 const Odrix = require('syncpoint-matrix')
 
 require('dotenv').config()
@@ -16,7 +16,7 @@ class JoinCommand extends Command {
 
     const projectId = args.projectId 
       ? args.projectId
-      : await cli.prompt('ID (uuid) of the project you want to join')
+      : await CliUx.ux.prompt('ID (uuid) of the project you want to join')
 
     const odrix = new Odrix({
       baseUrl: process.env.MATRIX_BASE_URL,

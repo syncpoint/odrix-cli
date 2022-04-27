@@ -1,5 +1,5 @@
 const { Command } = require('@oclif/command')
-const { cli } = require('cli-ux')
+const { CliUx } = require('@oclif/core')
 const Odrix = require('syncpoint-matrix')
 
 require('dotenv').config()
@@ -17,11 +17,11 @@ class InviteCommand extends Command {
 
     const projectId = args.projectId
       ? args.projectId
-      : await cli.prompt('ID (uuid) of the project to be shared')
+      : await CliUx.ux.prompt('ID (uuid) of the project to be shared')
 
     const userId = args.userId 
       ? args.userId.toLowerCase()
-      : (await cli.prompt('Whom (user Id) do you want to invite')).toLowerCase()
+      : (await CliUx.ux.prompt('Whom (user Id) do you want to invite')).toLowerCase()
 
     const odrix = new Odrix({
       baseUrl: process.env.MATRIX_BASE_URL,
