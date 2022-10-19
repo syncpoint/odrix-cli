@@ -1,5 +1,5 @@
 const { Command } = require('@oclif/command')
-const Odrix = require('syncpoint-matrix')
+const Odrix = require('@syncpoint/odrix')
 const readline = require('readline')
 
 require('dotenv').config()

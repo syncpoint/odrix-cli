@@ -1,6 +1,6 @@
 const { Command } = require('@oclif/command')
 const { CliUx } = require('@oclif/core')
-const Odrix = require('syncpoint-matrix')
+const Odrix = require('@syncpoint/odrix')
 
 require('dotenv').config()
 
