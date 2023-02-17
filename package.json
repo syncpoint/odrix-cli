@@ -52,8 +52,8 @@
     "@oclif/config": "^1.17.1",
     "@oclif/core": "^1.7.0",
     "@oclif/plugin-help": "^3.2.5",
-    "@syncpoint/odrix": "^1.2.1",
-    "dotenv": "^16.0.0",
+    "@syncpoint/odrix": "^1.4.1",
+    "dotenv": "^16.0.3",
     "js-base64": "^3.7.2",
     "wtfnode": "^0.9.1"
   }
